@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  solar-forecast-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solar-forecast-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.example
+    environment:
+      ENVIRONMENT: docker
+      MODEL_ROOT: /app
+      DATA_DIR: /app/data
+      SQLITE_PATH: /app/data/forecast_logs.db
+      OPENMETEO_TIMEZONE: Asia/Jakarta
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

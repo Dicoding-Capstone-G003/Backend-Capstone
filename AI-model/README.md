@@ -44,6 +44,37 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
+## Jalankan dengan Docker
+
+Build dan run:
+
+```bash
+docker compose up --build
+```
+
+Run di background:
+
+```bash
+docker compose up --build -d
+```
+
+Stop container:
+
+```bash
+docker compose down
+```
+
+Backend akan tersedia di:
+
+```text
+http://127.0.0.1:8000
+```
+
+Catatan:
+- `docker-compose.yml` memakai volume `./data:/app/data` agar file SQLite tetap persisten.
+- Artifact model region ikut terbawa ke image karena berada di dalam folder `AI-model/`.
+- Container memakai Python 3.12 agar dependency ML lebih stabil.
+
 ## Endpoint
 
 - `GET /health`

@@ -176,6 +176,8 @@ Pada backend MVP ini, feature builder mengikuti struktur artifact yang tersedia 
 - [README.md](./README.md)
 - [Development.md](./Development.md)
 - [AI-model/README.md](./AI-model/README.md)
+- [AI-model/Dockerfile](./AI-model/Dockerfile)
+- [AI-model/docker-compose.yml](./AI-model/docker-compose.yml)
 - [AI-model/app/main.py](./AI-model/app/main.py)
 - [AI-model/app/routes/forecast.py](./AI-model/app/routes/forecast.py)
 - [AI-model/app/services/forecast_service.py](./AI-model/app/services/forecast_service.py)

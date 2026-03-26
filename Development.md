@@ -62,6 +62,38 @@ ReDoc:
 http://127.0.0.1:8000/redoc
 ```
 
+## Alternatif Menjalankan dengan Docker
+
+Masuk ke folder backend:
+
+```bash
+cd AI-model
+```
+
+Build dan run container:
+
+```bash
+docker compose up --build
+```
+
+Run di background:
+
+```bash
+docker compose up --build -d
+```
+
+Stop container:
+
+```bash
+docker compose down
+```
+
+Catatan Docker:
+- File `Dockerfile` memakai base image `python:3.12-slim`
+- File `docker-compose.yml` expose service ke port `8000`
+- File SQLite tetap persisten lewat volume `./data:/app/data`
+- Artifact model region sudah ikut tersedia di dalam container karena dicopy dari folder project
+
 ## 5. Struktur Backend
 
 ```text
