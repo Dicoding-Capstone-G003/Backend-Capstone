@@ -6,33 +6,33 @@ Backend FastAPI untuk inference forecasting solar irradiance 24 jam ke depan per
 
 ```text
 AI-model/
-├─ app/
-│  ├─ main.py
-│  ├─ config.py
-│  ├─ schemas.py
-│  ├─ database.py
-│  ├─ models_db.py
-│  ├─ routes/
-│  │  └─ forecast.py
-│  └─ services/
-│     ├─ model_loader.py
-│     ├─ openmeteo_client.py
-│     ├─ feature_builder.py
-│     └─ forecast_service.py
-├─ Jawa/
-│  ├─ xgboost_models.joblib
-│  ├─ preprocessor.joblib
-│  └─ metrics.json
-├─ Sumatra/
-├─ Kalimantan/
-├─ Sulawesi/
-├─ Nusa_Tenggara/
-├─ Maluku/
-├─ Papua/
-├─ data/
-│  └─ forecast_logs.db
-├─ requirements.txt
-└─ .env.example
+|-- app/
+|   |-- main.py
+|   |-- config.py
+|   |-- schemas.py
+|   |-- database.py
+|   |-- models_db.py
+|   |-- routes/
+|   |   `-- forecast.py
+|   `-- services/
+|       |-- model_loader.py
+|       |-- openmeteo_client.py
+|       |-- feature_builder.py
+|       `-- forecast_service.py
+|-- Jawa/
+|   |-- xgboost_models.joblib
+|   |-- preprocessor.joblib
+|   `-- metrics.json
+|-- Sumatra/
+|-- Kalimantan/
+|-- Sulawesi/
+|-- Nusa_Tenggara/
+|-- Maluku/
+|-- Papua/
+|-- data/
+|   `-- forecast_logs.db
+|-- requirements.txt
+`-- .env.example
 ```
 
 ## Cara jalan
@@ -91,3 +91,8 @@ Response sebenarnya akan berisi 24 timestamp, 24 nilai `model_prediction`, dan 2
 - SQLite menyimpan satu baris per horizon forecast agar nanti mudah dipakai untuk evaluasi dan retraining.
 - Feature builder memakai fallback `ffill/bfill` untuk lag awal bila konteks historis minimum belum lengkap. Ini kompromi praktis agar inference tetap stabil.
 
+## Related Docs
+
+- Root overview repo: [../README.md](../README.md)
+- Development guide: [../Development.md](../Development.md)
+- Backend documentation: [../Documentation.md](../Documentation.md)
